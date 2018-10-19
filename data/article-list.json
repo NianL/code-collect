@@ -1,5 +1,5 @@
 {
-    "router-name": "article-detail",
+    "routerName": "article-detail",
     "list": [{
         "id": 1,
         "title": "随便做个小网站玩一玩",

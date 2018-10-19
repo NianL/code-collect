@@ -31,11 +31,13 @@ var PageArticle = {
         getArticleData() {
             DataAccess.GetArticleList()
                 .then(res => {
-                    this.articleInfo = res.data;
+                    if (res.status == 200) {
+                        this.articleInfo = res.data;
+                    }
                 });
         },
         articleHandle(item) {
-            this.$root.pageJump('article-detail', {
+            this.$root.pageJump(this.articleInfo.routerName, {
                 id: item.id
             });
         }

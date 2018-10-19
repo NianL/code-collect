@@ -118,10 +118,6 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.l-article-list .list:first-child{
-    border-top: 1px solid #eee;
-}
-
 .l-article-list .list h3 {
     font-size: 18px;
     height: 32px;
