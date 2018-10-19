@@ -18,6 +18,10 @@ HttpRequest.post = function (url, params, config) {
 
 var DataAccess = {};
 
-DataAccess.GetArticleList = function (params) {
-    return HttpRequest.get('data/article-list.json', params);
+DataAccess.GetArticleList = function () {
+    return HttpRequest.get('data/article/list.json');
+};
+
+DataAccess.GetArticleDetail = function (id) {
+    return HttpRequest.get('data/article/' + id + '.json');
 };

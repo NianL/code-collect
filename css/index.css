@@ -54,15 +54,33 @@ body {
 }
 
 /* 文章布局 */
-.main-article-left {
+.article .left {
     float: left;
     width: 780px;
     padding: 0px 10px;
 }
 
-.main-article-right {
+.article .right {
     float: right;
     width: 300px;
+}
+
+.article-detail .left .title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.article-detail .left .title h3 {
+    font-size: 20px;
+}
+
+.article-detail .left .time {
+    font-size: 12px;
+    color: #aaa;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* 页面样式 end */
@@ -90,7 +108,7 @@ body {
     margin: 0px 10px;
     cursor: pointer;
     color: #999;
-    padding:0px 2px;
+    padding: 0px 2px;
 }
 
 .l-menu-nav li:hover {
@@ -154,3 +172,21 @@ body {
 }
 
 /* 文章列表 end */
+
+/* 返回按钮 */
+
+.go-back {
+    margin-bottom: 15px;
+}
+
+.go-back a {
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.go-back a:hover {
+    color: #333;
+}
+
+/* 返回按钮 */

@@ -115,6 +115,7 @@ ImportFile.init(() => {
                         'script/tween.js',
                         'script/common.js',
                         'script/data-access.js',
+                        'script/config.js',
                         'script/module/header.js'
                     ]
                 }

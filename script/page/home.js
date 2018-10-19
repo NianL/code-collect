@@ -2,7 +2,7 @@ var PageHome = {
     mixins: [MixinImport],
     template: `
         <div v-if="importObject.status">
-            开发中...
+            123
         </div>
     `,
     data() {

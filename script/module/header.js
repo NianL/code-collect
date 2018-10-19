@@ -19,19 +19,7 @@ Vue.component('l-header', {
                 ]
             },
             currentMenu: null,
-            menuData: [{
-                text: '首页',
-                value: 'home'
-            }, {
-                text: '随便写写',
-                value: 'article'
-            }, {
-                text: '小玩意',
-                value: 'code'
-            }, {
-                text: '关于',
-                value: 'about'
-            }]
+            menuData: WebConfig.menu.data
         };
     },
     watch: {

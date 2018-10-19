@@ -1,17 +1,18 @@
 var PageArticle = {
     mixins: [MixinImport],
     template: `
-        <div v-if="importObject.status">
-            <div class="main-article-left">
+        <div class="article" v-if="importObject.status">
+            <div class="left">
                 <l-article-list :data="articleInfo.list" @click-handle="articleHandle" />
             </div>
-            <div class="main-article-right">
+            <div class="right">
                 <div>没想好放什么先空着</div>
             </div>
         </div>
     `,
     data() {
         return {
+            currentMenu: 'article',
             importObject: {
                 status: false,
                 data: [
@@ -22,9 +23,8 @@ var PageArticle = {
         };
     },
     created() {
-        document.title = '随便写写';
-        this.$root.$emit('menu-current', 'article');
-
+        document.title = WebConfig.menu.t(this.currentMenu);
+        this.$root.$emit('menu-current', this.currentMenu);
         this.getArticleData();
     },
     methods: {
