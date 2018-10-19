@@ -23,8 +23,11 @@ Vue.component('l-header', {
                 text: '首页',
                 value: 'home'
             }, {
-                text: '我的文章',
+                text: '随便写写',
                 value: 'article'
+            }, {
+                text: '小玩意',
+                value: 'code'
             }, {
                 text: '关于',
                 value: 'about'

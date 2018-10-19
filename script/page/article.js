@@ -1,24 +1,42 @@
 var PageArticle = {
+    mixins: [MixinImport],
     template: `
-        <div>
-            <ul>
-                <li v-for="item in data" @click="viewDetail(item)">文章-{{ item }}</li>
-            </ul>
+        <div v-if="importObject.status">
+            <div class="main-article-left">
+                <l-article-list :data="articleInfo.list" @click-handle="articleHandle" />
+            </div>
+            <div class="main-article-right">
+                <div>没想好放什么先空着</div>
+            </div>
         </div>
     `,
     data() {
         return {
-            data: [1, 2, 3]
-        }
+            importObject: {
+                status: false,
+                data: [
+                    'script/component/article-list.js'
+                ]
+            },
+            articleInfo: {},
+        };
     },
     created() {
-        document.title = '我的文章';
+        document.title = '随便写写';
         this.$root.$emit('menu-current', 'article');
+
+        this.getArticleData();
     },
     methods: {
-        viewDetail(item) {
+        getArticleData() {
+            DataAccess.GetArticleList()
+                .then(res => {
+                    this.articleInfo = res.data;
+                });
+        },
+        articleHandle(item) {
             this.$root.pageJump('article-detail', {
-                id: item
+                id: item.id
             });
         }
     }

@@ -1,7 +1,8 @@
-var PageArticleDetail = {
+var PageCode = {
+    mixins: [MixinImport],
     template: `
         <div v-if="importObject.status">
-            
+            小玩意
         </div>
     `,
     data() {
@@ -9,13 +10,19 @@ var PageArticleDetail = {
             importObject: {
                 status: false,
                 data: [
-                    ''
+
                 ]
             },
-        }
+            data: {},
+        };
     },
     created() {
-        document.title = '文章 - ' + this.$route.params.id;
-        this.$root.$emit('menu-current', 'article');
+        document.title = '小玩意';
+        this.$root.$emit('menu-current', 'code');
+    },
+    methods: {
+        init() {
+            
+        }
     }
 };

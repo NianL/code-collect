@@ -5,6 +5,7 @@ var ImportFile = {
             'script/page/home.js',
             'script/page/article.js',
             'script/page/article-detail.js',
+            'script/page/code.js',
             'script/page/about.js'
         ];
 
@@ -26,6 +27,10 @@ var ImportFile = {
                     path: '/article/:id',
                     name: 'article-detail',
                     component: PageArticleDetail
+                }, {
+                    path: '/code',
+                    name: 'code',
+                    component: PageCode
                 }, {
                     path: '/about',
                     name: 'about',
@@ -109,7 +114,8 @@ ImportFile.init(() => {
                     data: [
                         'script/tween.js',
                         'script/common.js',
-                        'script/component/header.js'
+                        'script/data-access.js',
+                        'script/module/header.js'
                     ]
                 }
             }
