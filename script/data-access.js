@@ -1,4 +1,4 @@
-axios.defaults.baseURL = location.origin;
+axios.defaults.baseURL = "";
 // axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
 var HttpRequest = {};

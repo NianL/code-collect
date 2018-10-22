@@ -16,7 +16,7 @@ var PageArticle = {
             importObject: {
                 status: false,
                 data: [
-                    'script/component/article-list.js'
+                    'script/module/article-list.js'
                 ]
             },
             articleInfo: {},
