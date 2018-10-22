@@ -6,7 +6,8 @@ var ImportFile = {
             'script/page/article.js',
             'script/page/article-detail.js',
             'script/page/code.js',
-            'script/page/about.js'
+            'script/page/about.js',
+            'script/page/edit.js'
         ];
 
         this.load(pages, () => {
@@ -24,7 +25,11 @@ var ImportFile = {
                     name: 'article',
                     component: PageArticle
                 }, {
-                    path: '/article/:id',
+                    path: '/article/l/:page',
+                    name: 'article-list',
+                    component: PageArticle
+                }, {
+                    path: '/article/d/:id',
                     name: 'article-detail',
                     component: PageArticleDetail
                 }, {
@@ -35,6 +40,10 @@ var ImportFile = {
                     path: '/about',
                     name: 'about',
                     component: PageAbout
+                }, {
+                    path: '/edit',
+                    name: 'edit',
+                    component: PageEdit
                 }]
             })
             next && next();

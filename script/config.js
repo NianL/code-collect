@@ -13,6 +13,9 @@ WebConfig.menu = {
     }, {
         text: '关于',
         value: 'about'
+    }, {
+        text: '编辑',
+        value: 'edit'
     }],
     t(n) {
         for (var i = 0; i < this.data.length; i++) {

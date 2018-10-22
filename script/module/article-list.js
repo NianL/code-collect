@@ -13,6 +13,12 @@ Vue.component('l-article-list', {
         </div>
     `,
     props: ['data'],
+    data() {
+        return {
+            currentMenu: null,
+            menuData: WebConfig.menu.data
+        };
+    },
     methods: {
         clickHandle(item) {
             this.$emit('click-handle', item);
