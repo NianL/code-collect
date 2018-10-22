@@ -2,9 +2,9 @@ Vue.component('l-tool-base64', {
     template: `
         <div>
             <h3>base64字符串转换(utf-8)</h3>
-            <div>请输入需要加密内容：</div>
+            <div>加密内容：</div>
             <textarea v-model="content" rows="8" style="width:600px;" />
-            <div>请输入需要解密内容：</div>
+            <div>解密内容：</div>
             <textarea v-model="contentBase64" rows="8" style="width:600px;" />
         </div>
     `,
