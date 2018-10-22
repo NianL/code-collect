@@ -25,3 +25,7 @@ DataAccess.GetArticleList = function () {
 DataAccess.GetArticleDetail = function (id) {
     return HttpRequest.get('data/article/' + id + '.json');
 };
+
+DataAccess.GetToolList = function (id) {
+    return HttpRequest.get('data/tool/list.json');
+};

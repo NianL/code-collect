@@ -5,7 +5,7 @@ var ImportFile = {
             'script/page/home.js',
             'script/page/article.js',
             'script/page/article-detail.js',
-            'script/page/code.js',
+            'script/page/tool.js',
             'script/page/about.js',
             'script/page/edit.js'
         ];
@@ -33,9 +33,13 @@ var ImportFile = {
                     name: 'article-detail',
                     component: PageArticleDetail
                 }, {
-                    path: '/code',
-                    name: 'code',
-                    component: PageCode
+                    path: '/tool',
+                    name: 'tool',
+                    component: PageTool
+                }, {
+                    path: '/tool/i/:name',
+                    name: 'tool-item',
+                    component: PageTool
                 }, {
                     path: '/about',
                     name: 'about',

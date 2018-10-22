@@ -1,10 +1,10 @@
 Vue.component('l-go-back', {
     template: `
         <div class="go-back">
-            <a v-text="'&lt;'+content" @click="goBack"></a> 
+            <a v-text="'&lt;返回'" @click="goBack"></a> 
         </div>
     `,
-    props: ['content', 'routerName'],
+    props: ['routerName'],
     methods: {
         goBack() {
             if (this.routerName) {

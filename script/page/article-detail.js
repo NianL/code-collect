@@ -3,7 +3,7 @@ var PageArticleDetail = {
     template: `
         <div class="article article-detail" v-if="importObject.status">
             <div class="left">
-                <l-go-back :content="c_goBackName" />
+                <l-go-back />
                 <div class="title"><h3 v-text="articleDetail.title" /></div>
                 <div class="time"><span v-text="articleDetail.createTime" /></div>
                 <div class="content" v-html="articleDetail.content" />
@@ -21,11 +21,6 @@ var PageArticleDetail = {
                 ]
             },
             articleDetail: {}
-        }
-    },
-    computed: {
-        c_goBackName() {
-            return WebConfig.menu.t(this.currentMenu);
         }
     },
     created() {

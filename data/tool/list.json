@@ -1,0 +1,8 @@
+{
+    "routerName": "tool-item",
+    "list": [{
+        "title": "base64字符转换",
+        "path": "script/module/tool/base64.js",
+        "name": "base64"
+    }]
+}

@@ -43,19 +43,19 @@ var PageArticle = {
         }
     },
     watch: {
-        '$route'(to, from) {
-            this.paging.index = this.$route.params.page || 1;
+        '$route'() {
+            this.initPaging();
         }
     },
     created() {
         document.title = WebConfig.menu.t(this.currentMenu);
         this.$root.$emit('menu-current', this.currentMenu);
-        this.getArticleData();
+        this.getData();
 
-        this.paging.index = this.$route.params.page || 1;
+        this.initPaging();
     },
     methods: {
-        getArticleData() {
+        getData() {
             DataAccess.GetArticleList()
                 .then(res => {
                     if (res.status == 200) {
@@ -68,6 +68,9 @@ var PageArticle = {
             this.$root.pageJump(this.articleInfo.routerName, {
                 id: item.id
             });
+        },
+        initPaging() {
+            this.paging.index = this.$route.params.page || 1;
         },
         pagingClick(index) {
             this.paging.index = index;

@@ -8,6 +8,10 @@ body {
     color: #666;
 }
 
+a {
+    cursor: pointer;
+}
+
 .box-shadow-gray {
     padding: 5px 10px;
     border: 1px solid #eee;
@@ -83,6 +87,23 @@ body {
     text-align: center;
 }
 
+/* 工具样式 */
+.main-tool {
+    padding: 10px;
+}
+
+.main-tool .item {
+    font-size: 14px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.main-tool .item:hover {
+    background: #666;
+    color: #eee;
+}
+
+
 /* 页面样式 end */
 
 /* MenuNav  */
@@ -144,7 +165,6 @@ body {
 
 .l-article-list .list h3 a {
     color: #666;
-    cursor: pointer;
 }
 
 .l-article-list .list h3 a:hover {
@@ -180,7 +200,6 @@ body {
 }
 
 .go-back a {
-    cursor: pointer;
     font-size: 14px;
     color: #666;
 }
@@ -203,7 +222,7 @@ body {
 .l-paging a {
     display: inline;
     padding: 2px 5px;
-    margin:0px 3px;
+    margin: 0px 3px;
 }
 
 .l-paging span {
@@ -211,7 +230,6 @@ body {
 }
 
 .l-paging a:hover {
-    cursor: pointer;
     color: #333;
 }
 

@@ -9,13 +9,10 @@ WebConfig.menu = {
         value: 'article'
     }, {
         text: '小玩意',
-        value: 'code'
+        value: 'tool'
     }, {
         text: '关于',
         value: 'about'
-    }, {
-        text: '编辑',
-        value: 'edit'
     }],
     t(n) {
         for (var i = 0; i < this.data.length; i++) {
