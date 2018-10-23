@@ -4,5 +4,9 @@
         "title": "base64字符转换",
         "path": "script/module/tool/base64.js",
         "name": "base64"
+    }, {
+        "title": "图片转base64",
+        "path": "script/module/tool/base64-img.js",
+        "name": "base64-img"
     }]
 }

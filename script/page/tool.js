@@ -38,7 +38,6 @@ var PageTool = {
         }
     },
     created() {
-        document.title = '小玩意';
         this.$root.$emit('menu-current', this.currentMenu);
         this.getData();
     },
@@ -71,6 +70,7 @@ var PageTool = {
                     this.toolItem = itemName;
                 });
             } else {
+                document.title = '小玩意';
                 this.toolItem = null;
             }
         },

@@ -2,10 +2,10 @@ Vue.component('l-tool-base64', {
     template: `
         <div>
             <h3>base64字符串转换(utf-8)</h3>
-            <div>加密内容：</div>
-            <textarea v-model="content" rows="8" style="width:600px;" />
-            <div>解密内容：</div>
-            <textarea v-model="contentBase64" rows="8" style="width:600px;" />
+            <div>明文：</div>
+            <textarea v-model="content" rows="8" style="width: 780px; border: 1px solid #ccc;" />
+            <div>base64：</div>
+            <textarea v-model="contentBase64" rows="8" style="width: 780px; border: 1px solid #ccc;" />
         </div>
     `,
     data() {

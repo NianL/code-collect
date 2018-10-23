@@ -95,7 +95,13 @@ a {
 .main-tool .item {
     font-size: 14px;
     padding: 2px 5px;
+    margin-right: 8px;
     border-radius: 4px;
+}
+
+.main-tool .item {
+    background: #eee;
+    color: #666;
 }
 
 .main-tool .item:hover {
