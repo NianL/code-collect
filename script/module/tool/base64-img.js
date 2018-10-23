@@ -3,14 +3,14 @@ Vue.component('l-tool-base64-img', {
         <div>
             <h3>图片转base64</h3><span>(图片大小请不要超过2M，会卡的...)</span>
             <input v-show="false" ref="upload_img" type="file" @change="fileHandle" accept="image/jpeg, image/png, image/bmp" />
-            <div style="padding:10px 0px;">
-                <button style="padding:1px 5px; margin-right:5px;" @click="$refs.upload_img.click()">选择图片</button>
-                <button style="padding:1px 5px; margin-right:5px;" @click="clear">清空</button>
-                <button style="padding:1px 5px; margin-right:5px;" @click="output" v-show="fileInfo.name">导出</button>
-                <span style="font-size:12px;" v-if="fileInfo.name">{{ fileInfo.name }} {{ fileInfo.size | fileSizeFormat }}</span>
+            <div style="padding:5px 0px;">
+                <button @click="$refs.upload_img.click()">选择图片</button>
+                <button @click="clear">清空</button>
+                <button @click="output" v-show="fileInfo.name">导出txt</button>
+                <span v-if="fileInfo.name">{{ fileInfo.name }} {{ fileInfo.size | fileSizeFormat }}</span>
             </div>
-            <div v-if="fileInfo.size<2097152" style="font-size:12px; width: 780px; height:200px; border: 1px solid #ccc; word-break: break-all; overflow: auto;">{{ conentBase64 }}</div>
-            <div style="margin-top:10px;">
+            <div class="textarea">{{ conentBase64 }}</div>
+            <div v-if="conentBase64!=''" style="margin-top:10px;">
                 <img :src="conentBase64" style="max-width:780px; max-height:400px;" />
             </div>
         </div>
@@ -22,7 +22,7 @@ Vue.component('l-tool-base64-img', {
         };
     },
     filters: {
-        fileSizeFormat: function (value) {
+        fileSizeFormat(value) {
             if (isNaN(value) || value == 0) return "0K";
             else {
                 var val = parseFloat(value) / 1024;
@@ -36,16 +36,18 @@ Vue.component('l-tool-base64-img', {
         fileHandle() {
             var maxSize = 2;
             var file = this.$refs.upload_img.files[0];
-            if (file.size > (maxSize * 1024 * 1024)) {
-                alert("图片大小不超过" + maxSize + "M");
-                return;
-            }
-            this.fileInfo = {
-                name: file.name,
-                size: file.size
-            };
-
             if (file) {
+                if (file.size > (maxSize * 1024 * 1024)) {
+                    alert("图片大小不超过" + maxSize + "M");
+                    this.clear();
+                    return;
+                }
+
+                this.fileInfo = {
+                    name: file.name,
+                    size: file.size
+                };
+
                 var reader = new FileReader();
                 reader.onload = (e) => {
                     this.conentBase64 = e.target.result;

@@ -3,9 +3,9 @@ Vue.component('l-tool-base64', {
         <div>
             <h3>base64字符串转换(utf-8)</h3>
             <div>明文：</div>
-            <textarea v-model="content" rows="8" style="width: 780px; border: 1px solid #ccc;" />
+            <textarea v-model="content" />
             <div>base64：</div>
-            <textarea v-model="contentBase64" rows="8" style="width: 780px; border: 1px solid #ccc;" />
+            <textarea v-model="contentBase64" />
         </div>
     `,
     data() {

@@ -8,5 +8,9 @@
         "title": "图片转base64",
         "path": "script/module/tool/base64-img.js",
         "name": "base64-img"
+    }, {
+        "title": "生成二维码",
+        "path": "script/module/tool/qrcode.js",
+        "name": "qrcode"
     }]
 }

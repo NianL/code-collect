@@ -7,7 +7,7 @@ var PageTool = {
             </template>
             <template v-else>
                 <l-go-back :router-name="currentMenu" />
-                <page-view :path="'l-tool-'+toolItem" />
+                <page-view class="main-tool-item" :path="'l-tool-'+toolItem" />
             </template>
         </div>
     `,
