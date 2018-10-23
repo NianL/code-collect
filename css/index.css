@@ -254,15 +254,29 @@ a {
     font-size: 14px;
     line-height: 18px;
     width: 780px;
-    height: 180px;
+    height: 144px;
+    background: #fff;
     border: 1px solid #ccc;
     word-break: break-all;
     overflow: auto;
+    margin: 2px 0px;
 }
 
-.main-tool-item button {
-    padding: 1px 5px;
+.main-tool-item button,
+.main-tool-item .button {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0px 5px;
     margin-right: 5px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.main-tool-item button:hover,
+.main-tool-item .button:hover {
+    background: #eee;
 }
 
 /* tool end */

@@ -1,12 +1,12 @@
 Vue.component('l-tool-base64-img', {
     template: `
         <div>
-            <h3>图片转base64</h3><span>(图片大小请不要超过2M，会卡的...)</span>
+            <h3>图片转base64</h3><span></span>
             <input v-show="false" ref="upload_img" type="file" @change="fileHandle" accept="image/jpeg, image/png, image/bmp" />
             <div style="padding:5px 0px;">
-                <button @click="$refs.upload_img.click()">选择图片</button>
-                <button @click="clear">清空</button>
-                <button @click="output" v-show="fileInfo.name">导出txt</button>
+                <a class="button" @click="$refs.upload_img.click()">选择图片</a>
+                <a class="button" @click="clear">清空</a>
+                <a class="button" @click="output" v-show="fileInfo.name">导出txt</a>
                 <span v-if="fileInfo.name">{{ fileInfo.name }} {{ fileInfo.size | fileSizeFormat }}</span>
             </div>
             <div class="textarea">{{ conentBase64 }}</div>
