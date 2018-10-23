@@ -10,17 +10,17 @@ Vue.component('l-tool-base64', {
     `,
     data() {
         return {
-            content: "",
-            contentBase64: "",
+            content: '',
+            contentBase64: '',
         };
     },
     watch: {
         content(n) {
-            if (n != "") this.contentBase64 = Common.encodeBase64(n);
+            if (n != '') this.contentBase64 = Common.encodeBase64(n);
             else this.contentBase64 = n
         },
         contentBase64(n) {
-            if (n != "") this.content = Common.decodeBase64(n);
+            if (n != '') this.content = Common.decodeBase64(n);
             else this.content = n
         }
     }

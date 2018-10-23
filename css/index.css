@@ -248,6 +248,36 @@ a {
 
 /* tool */
 
+.main-tool-search {
+    padding-bottom: 20px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main-tool-search::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+
+.main-tool-search span {
+    float: left;
+    padding-right: 5px;
+}
+
+.main-tool-search input {
+    float: left;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+}
+
 .main-tool-item textarea,
 .main-tool-item .textarea {
     color: #333;
@@ -267,7 +297,6 @@ a {
     background: #fff;
     border: 1px solid #ccc;
     padding: 0px 5px;
-    margin-right: 5px;
     display: inline-block;
     height: 24px;
     line-height: 24px;
