@@ -2,10 +2,10 @@ var PageTool = {
     mixins: [MixinImport],
     template: `
         <div class="main-tool" v-if="importObject.status">
-            <template v-if="toolItem==null">
+            <template v-if="tabType==1">
                 <a class="item" v-for="item in toolInfo.list" @click="toolItemHandle(item)">{{item.title}}</a>
             </template>
-            <template v-else>
+            <template v-if="tabType==2">
                 <l-go-back :router-name="currentMenu" />
                 <page-view class="main-tool-item" :path="'l-tool-'+toolItem" />
             </template>
@@ -29,7 +29,8 @@ var PageTool = {
                 ]
             },
             toolInfo: {},
-            toolItem: null
+            toolItem: null,
+            tabType: 0, //0 1 2
         };
     },
     watch: {
@@ -68,10 +69,12 @@ var PageTool = {
                 ImportFile.load([item.path], () => {
                     document.title = item.title;
                     this.toolItem = itemName;
+                    this.tabType = 2;
                 });
             } else {
                 document.title = '小玩意';
                 this.toolItem = null;
+                this.tabType = 1;
             }
         },
         toolItemHandle(item) {
