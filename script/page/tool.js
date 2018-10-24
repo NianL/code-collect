@@ -50,9 +50,10 @@ var PageTool = {
     computed: {
         c_itemList() {
             var result = [];
+            var search = this.searchContent.toLowerCase();
             if (this.toolInfo.list && this.toolInfo.list.length) {
                 this.toolInfo.list.map(item => {
-                    if(item.title.indexOf(this.searchContent) != -1)
+                    if (item.title.toLowerCase().indexOf(search) != -1)
                         result.push(item);
                 })
             }

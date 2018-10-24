@@ -9,18 +9,32 @@ var PageHome = {
     `,
     data() {
         return {
+            currentMenu: 'home',
             importObject: {
                 status: false,
                 data: [
-
+                    
                 ]
             },
             loadingStatus: false,
+            menuData: [{
+                text: '这个',
+                value: 'home'
+            }, {
+                text: '网站的',
+                value: 'article'
+            }, {
+                text: '导航菜单',
+                value: 'tool'
+            }, {
+                text: '组件使用',
+                value: 'about'
+            }]
         };
     },
     created() {
         document.title = '首页';
-        this.$root.$emit('menu-current', 'home');
+        this.$root.$emit('menu-current', this.currentMenu);
     },
     methods: {
         init() {},

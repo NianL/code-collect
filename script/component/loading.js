@@ -31,7 +31,7 @@ Vue.directive("loading", {
         });
         var coms = new coms().$mount().$el;
         el.appendChild(coms);
-        //el.style.position = 'relative';
+        el.style.position = 'relative';
     },
     inserted: function (el, obj) {
         var elLoading = el.querySelector('.l-loading');
