@@ -12,6 +12,12 @@ a {
     cursor: pointer;
 }
 
+input,
+textarea,
+button {
+    outline: none
+}
+
 .box-shadow-gray {
     padding: 5px 10px;
     border: 1px solid #eee;
@@ -87,7 +93,28 @@ a {
     text-align: center;
 }
 
-/* 工具样式 */
+.main-search {
+    margin-bottom: 15px;
+}
+
+.main-search input {
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    padding: 3px 0px 3px 30px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFM0FBREEwMUU3MEMxMUU3QjYxM0QzNUZBMzM5NzA1NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFM0FBREEwMkU3MEMxMUU3QjYxM0QzNUZBMzM5NzA1NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUzQUFEOUZGRTcwQzExRTdCNjEzRDM1RkEzMzk3MDU1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUzQUFEQTAwRTcwQzExRTdCNjEzRDM1RkEzMzk3MDU1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+YoPyKQAAAYdJREFUeNqclE8oRFEUxu8bL//KQpTZWIhmo4zZ20mh8WdhNlNsptiRws4URdkoFrbKlJWysJAozZ6ZFCUhjawtZiP/nu/ku3Vd7/H46tc97773vnfuPec+x/M8JbooFmVoBJNgCMSAC+7BIViXx1SAIkY8DG7APOgA1TRqAePgDCwCx8/IZTZissu5J5ADefAM4iADovxILZixjZzzQkGWcwvqwBXoZ2am5N42SPK6BxzZS5vmg5JJn4+JqAxSxh5l/fZokHGOmQVJPrTMuAs02EYxxsfqd+X1loA226iC8WsIoxcjrrKNHhjHQxh1GnHJNjpgnOGm/6QpjtfgzjZaA2/sEylxTYBJlq0hWv1WtfZEQkq6xGvpk1MwCppBE+gF+2DBeE/mKr80pJw1dLZUYQXMqvDaAyPs/s+zhqzk5M6BbrbBu/XSJZjg0rUGwI7OzLFOv1Y9aGWJS/wDKLbKFkjbmbkBaT+CE595KcoY47SR2WZE/V3azFxmylX/kzYrc9z4EGAAvJ5bFqQ4XiQAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+}
+
+.main-search input:focus {
+    border-color: #999;
+}
+
 .main-tool {
     padding: 10px;
 }
@@ -96,7 +123,7 @@ a {
     font-size: 14px;
     padding: 2px 5px;
     margin-right: 8px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .main-tool .item {
@@ -109,6 +136,35 @@ a {
     color: #eee;
 }
 
+.main-tool-item textarea,
+.main-tool-item .textarea {
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    width: 780px;
+    height: 144px;
+    background: #fff;
+    border: 1px solid #ccc;
+    word-break: break-all;
+    overflow: auto;
+    margin: 2px 0px;
+}
+
+.main-tool-item button,
+.main-tool-item .button {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0px 5px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.main-tool-item button:hover,
+.main-tool-item .button:hover {
+    background: #eee;
+}
 
 /* 页面样式 end */
 
@@ -246,66 +302,89 @@ a {
 
 /* paging end */
 
-/* tool */
-
-.main-tool-search {
-    padding-bottom: 20px;
-    font-size: 16px;
-    line-height: 24px;
+/* loading */
+.l-loading {
+    position: absolute;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, .9);
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s
 }
 
-.main-tool-search::after {
-    content: "";
-    display: block;
-    clear: both;
-    height: 0px;
-    overflow: hidden;
+.l-loading-spinner {
+    top: 50%;
+    margin-top: -21px;
+    width: 100%;
+    text-align: center;
+    position: absolute
 }
 
-.main-tool-search span {
-    float: left;
-    padding-right: 5px;
+.l-loading-spinner .circular {
+    -webkit-animation: loading-rotate 2s linear infinite;
+    animation: loading-rotate 2s linear infinite
 }
 
-.main-tool-search input {
-    float: left;
-    background: #fff;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    color: #666;
-    width: 200px;
-    height: 24px;
-    line-height: 24px;
+.l-loading-spinner .path {
+    -webkit-animation: loading-dash 1.5s ease-in-out infinite;
+    animation: loading-dash 1.5s ease-in-out infinite;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    stroke: #999;
+    stroke-linecap: round
 }
 
-.main-tool-item textarea,
-.main-tool-item .textarea {
-    color: #333;
-    font-size: 14px;
-    line-height: 18px;
-    width: 780px;
-    height: 144px;
-    background: #fff;
-    border: 1px solid #ccc;
-    word-break: break-all;
-    overflow: auto;
-    margin: 2px 0px;
+@-webkit-keyframes loading-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
 }
 
-.main-tool-item button,
-.main-tool-item .button {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 0px 5px;
-    display: inline-block;
-    height: 24px;
-    line-height: 24px;
-    cursor: pointer;
+@keyframes loading-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
 }
 
-.main-tool-item button:hover,
-.main-tool-item .button:hover {
-    background: #eee;
+@-webkit-keyframes loading-dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px
+    }
 }
 
-/* tool end */
+@keyframes loading-dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px
+    }
+}
+
+/* loading end */

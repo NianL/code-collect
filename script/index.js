@@ -129,7 +129,8 @@ ImportFile.init(() => {
                         'script/common.js',
                         'script/data-access.js',
                         'script/config.js',
-                        'script/module/header.js'
+                        'script/module/header.js',
+                        'script/component/loading.js'
                     ]
                 }
             }

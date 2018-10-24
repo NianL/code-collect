@@ -2,7 +2,9 @@ var PageHome = {
     mixins: [MixinImport],
     template: `
         <div v-if="importObject.status">
-            123
+            <button @click="loadingStatus=true">show loading</button>
+            <button @click="loadingStatus=false">hide loading</button>
+            <div v-loading="loadingStatus" style="position:relative ;min-height:400px; background:#666; margin-top:10px;"></div>
         </div>
     `,
     data() {
@@ -10,9 +12,10 @@ var PageHome = {
             importObject: {
                 status: false,
                 data: [
-                    
+
                 ]
             },
+            loadingStatus: false,
         };
     },
     created() {
@@ -20,10 +23,8 @@ var PageHome = {
         this.$root.$emit('menu-current', 'home');
     },
     methods: {
-        init() {
-            
-        },
-        articleHandle(item){
+        init() {},
+        articleHandle(item) {
             console.log(item);
         }
     }

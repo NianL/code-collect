@@ -1,7 +1,7 @@
 Vue.component('l-tool-base64-img', {
     template: `
         <div>
-            <h3>图片转base64</h3><span></span>
+            <h3>图片转base64</h3>
             <input v-show="false" ref="upload_img" type="file" @change="fileHandle" accept="image/jpeg, image/png, image/bmp" />
             <div style="padding:5px 0px;">
                 <a class="button" @click="$refs.upload_img.click()">选择图片</a>

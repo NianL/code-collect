@@ -12,5 +12,9 @@
         "title": "生成二维码",
         "path": "script/module/tool/qrcode.js",
         "name": "qrcode"
+    }, {
+        "title": "WebApi调试",
+        "path": "script/module/tool/web-api.js",
+        "name": "web-api"
     }]
 }
