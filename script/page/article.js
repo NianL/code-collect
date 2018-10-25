@@ -18,6 +18,7 @@ var PageArticle = {
                 status: false,
                 data: [
                     'script/component/paging.js',
+                    'css/component/paging.css',
                     'script/module/article-list.js'
                 ]
             },

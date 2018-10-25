@@ -60,7 +60,7 @@ var ImportFile = {
             imports.map((item) => {
                 if (this.has.indexOf(item) == -1) {
                     this.has.push(item);
-                    importScript(item, checkStatus);
+                    importFile(item, checkStatus);
                 } else {
                     checkStatus();
                 }
@@ -76,20 +76,31 @@ var ImportFile = {
             }
         }
 
-        function importScript(url, callback) {
+        function importFile(url, callback) {
             var head = document.getElementsByTagName('head')[0];
-            var script = document.createElement('script');
-            script.src = url;
-            if (typeof (callback) == 'function') {
-                script.onload = script.onreadystatechange = function () {
-                    if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
-                        callback();
-                        script.onload = script.onreadystatechange = null;
-                    }
-                };
+            var file = null;
+            if (url.indexOf('.js') != -1) {
+                file = document.createElement('script');
+                file.src = url;
+
+            } else if (url.indexOf('.css') != -1) {
+                file = document.createElement('link');
+                file.href = url;
+                file.rel = "stylesheet";
             }
-            head.appendChild(script);
+            if (file) {
+                if (typeof (callback) == 'function') {
+                    file.onload = file.onreadystatechange = function () {
+                        if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                            callback();
+                            file.onload = file.onreadystatechange = null;
+                        }
+                    };
+                }
+                head.appendChild(file);
+            }
         }
+
     }
 };
 
@@ -129,8 +140,7 @@ ImportFile.init(() => {
                         'script/common.js',
                         'script/data-access.js',
                         'script/config.js',
-                        'script/module/header.js',
-                        'script/component/loading.js'
+                        'script/module/header.js'
                     ]
                 }
             }

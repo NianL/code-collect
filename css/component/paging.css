@@ -1,0 +1,26 @@
+.l-paging {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    padding: 10px 0px;
+}
+
+.l-paging span,
+.l-paging a {
+    display: inline;
+    padding: 2px 5px;
+    margin: 0px 3px;
+}
+
+.l-paging span {
+    color: #eee;
+}
+
+.l-paging a:hover {
+    color: #333;
+}
+
+.l-paging a.select {
+    color: #666;
+    font-weight: bold;
+}
