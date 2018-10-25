@@ -14,6 +14,7 @@ a {
 
 input,
 textarea,
+select,
 button {
     outline: none
 }
@@ -108,20 +109,31 @@ button {
     color: #eee;
 }
 
+.main-tool-item .input {
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
 .main-tool-item textarea,
 .main-tool-item .textarea {
     color: #333;
     font-size: 14px;
     line-height: 18px;
-    width: 780px;
+    width: 770px;
     height: 144px;
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     word-break: break-all;
     overflow: auto;
     margin: 2px 0px;
+    padding: 5px;
 }
 
+.main-tool-item .input:focus,
 .main-tool-item textarea:focus,
 .main-tool-item .textarea:focus {
     border: 1px solid #999;
@@ -130,7 +142,7 @@ button {
 .main-tool-item button,
 .main-tool-item .button {
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     padding: 0px 5px;
     display: inline-block;
     height: 24px;

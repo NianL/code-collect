@@ -56,6 +56,7 @@ var ImportFile = {
     has: [],
     load(imports, callback) {
         var loadIndex = 0;
+        var _this = this;
         if (imports && imports.length > 0) {
             imports.map((item) => {
                 if (this.has.indexOf(item) == -1) {
@@ -140,7 +141,11 @@ ImportFile.init(() => {
                         'script/common.js',
                         'script/data-access.js',
                         'script/config.js',
-                        'script/module/header.js'
+                        'script/module/header.js',
+                        'script/component/loading.js',
+                        'css/component/loading.css',
+                        'script/component/menu-nav.js',
+                        'css/component/menu-nav.css'
                     ]
                 }
             }

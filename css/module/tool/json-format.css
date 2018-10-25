@@ -1,0 +1,34 @@
+.json-format h3 {
+    margin-bottom: 15px;
+}
+
+.json-format .format[class="ant-popover-inner-content"] {
+    padding-top: 10px !important;
+    padding-right: 0 !important;
+    padding-bottom: 10px !important;
+    padding-left: 0 !important;
+}
+
+.json-format .show-box::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+
+.json-format .show-box .box {
+    width: 520px;
+    float: left;
+}
+
+.json-format .show-box .operate {
+    height: 26px;
+    line-height: 26px;
+}
+
+.json-format .show-box textarea,
+.json-format .show-box .textarea {
+    width: 500px;
+    height: 600px;
+}

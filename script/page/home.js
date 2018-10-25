@@ -4,7 +4,16 @@ var PageHome = {
         <div v-if="importObject.status">
             <button @click="loadingStatus=true">show loading</button>
             <button @click="loadingStatus=false">hide loading</button>
-            <div v-loading="loadingStatus" style="position:relative ;min-height:400px; background:#666; margin-top:10px;"></div>
+            <div v-loading="loadingStatus" style="position:relative ;min-height:400px; background:#eee; margin-top:10px;">
+                <l-menu-nav 
+                    default-value="这个" 
+                    :data="menuData" 
+                />
+                <l-menu-nav 
+                    default-value="JavaScript" 
+                    :data="menuData2" 
+                />
+            </div>
         </div>
     `,
     data() {
@@ -13,8 +22,7 @@ var PageHome = {
             importObject: {
                 status: false,
                 data: [
-                    'script/component/loading.js',
-                    'css/component/loading.css'
+                    
                 ]
             },
             loadingStatus: false,
@@ -30,6 +38,16 @@ var PageHome = {
             }, {
                 text: '组件使用',
                 value: 'about'
+            }],
+            menuData2: [{
+                text: 'JavaScript',
+                value: 'JavaScript'
+            }, {
+                text: 'CSS',
+                value: 'CSS'
+            }, {
+                text: 'HTML',
+                value: 'HTML'
             }]
         };
     },

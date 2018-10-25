@@ -15,8 +15,7 @@ Vue.component('l-header', {
             importObject: {
                 status: false,
                 data: [
-                    'script/component/menu-nav.js',
-                    'css/component/menu-nav.css'
+
                 ]
             },
             currentMenu: null,

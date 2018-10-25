@@ -13,8 +13,8 @@
         "path": "script/module/tool/qrcode.js",
         "name": "qrcode"
     }, {
-        "title": "WebApi调试",
-        "path": "script/module/tool/web-api.js",
-        "name": "web-api"
+        "title": "json格式化",
+        "path": "script/module/tool/json-format.js",
+        "name": "json-format"
     }]
 }
