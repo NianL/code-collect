@@ -16,7 +16,8 @@ input,
 textarea,
 select,
 button {
-    outline: none
+    outline: none;
+    resize: none;
 }
 
 .box-shadow-gray {
@@ -93,15 +94,16 @@ button {
 }
 
 .main-tool .item {
-    font-size: 14px;
-    padding: 2px 5px;
-    margin-right: 8px;
-    border-radius: 2px;
-}
-
-.main-tool .item {
     background: #eee;
     color: #666;
+    font-size: 14px;
+    border-radius: 2px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0px 6px;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 .main-tool .item:hover {

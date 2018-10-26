@@ -4,7 +4,7 @@ var PageTool = {
         <div class="main-tool" v-if="importObject.status">
             <template v-if="tabType==1">
                 <div class="main-search">
-                    <input v-model="searchContent" />
+                    <input v-model="searchContent" @focus="searchFocus" />
                 </div>
                 <template v-for="item in c_itemList">
                     <a class="item" @click="toolItemHandle(item)">{{item.title}}</a>
@@ -42,9 +42,6 @@ var PageTool = {
     watch: {
         '$route'() {
             this.getData();
-        },
-        searchContent() {
-
         }
     },
     computed: {
@@ -98,6 +95,9 @@ var PageTool = {
                 this.toolItem = null;
                 this.tabType = 1;
             }
+        },
+        searchFocus(e) {
+            e.target.select();
         },
         toolItemHandle(item) {
             this.$root.pageJump(this.toolInfo.routerName, {
