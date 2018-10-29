@@ -12,7 +12,7 @@ Vue.component('l-tool-kindeditor', {
                 status: false,
                 data: [
                     'script/refer/kindeditor/themes/default/default.css',
-                    'script/refer/kindeditor/kindeditor-all.js',
+                    'script/refer/kindeditor/kindeditor-all-min.js',
                     'script/refer/kindeditor/lang/zh-CN.js'
                 ]
             },
