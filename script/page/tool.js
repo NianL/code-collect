@@ -4,7 +4,7 @@ var PageTool = {
         <div class="main-tool" v-if="importObject.status">
             <template v-if="tabType==1">
                 <div class="main-search">
-                    <input v-model="searchContent" @focus="searchFocus" />
+                    <input v-model="searchContent" @focus="searchFocus" placeholder="输入关键词模糊查询" />
                 </div>
                 <template v-for="item in c_itemList">
                     <a class="item" @click="toolItemHandle(item)">{{item.title}}</a>

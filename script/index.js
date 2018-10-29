@@ -74,14 +74,14 @@ var ImportFile = {
                 } else {
                     checkStatus();
                 }
+            }
 
-                function checkStatus() {
-                    loadIndex++;
-                    if (loadIndex == imports.length) {
-                        callback && callback();
-                    } else {
-                        waitLoad();
-                    }
+            function checkStatus() {
+                loadIndex++;
+                if (loadIndex == imports.length) {
+                    callback && callback();
+                } else {
+                    waitLoad();
                 }
             }
         } else {

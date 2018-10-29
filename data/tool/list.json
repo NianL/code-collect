@@ -18,7 +18,7 @@
         "name": "json-format"
     }, {
         "title": "文本编辑器",
-        "path": "script/module/tool/kindeditor.js",
-        "name": "kindeditor"
+        "path": "script/module/tool/editor.js",
+        "name": "editor"
     }]
 }
