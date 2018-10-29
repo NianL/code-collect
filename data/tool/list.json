@@ -16,5 +16,9 @@
         "title": "json格式化",
         "path": "script/module/tool/json-format.js",
         "name": "json-format"
+    }, {
+        "title": "文本编辑器",
+        "path": "script/module/tool/kindeditor.js",
+        "name": "kindeditor"
     }]
 }

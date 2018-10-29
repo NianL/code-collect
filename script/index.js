@@ -6,8 +6,7 @@ var ImportFile = {
             'script/page/article.js',
             'script/page/article-detail.js',
             'script/page/tool.js',
-            'script/page/about.js',
-            'script/page/edit.js'
+            'script/page/about.js'
         ];
 
         this.load(pages, () => {
@@ -44,10 +43,6 @@ var ImportFile = {
                     path: '/about',
                     name: 'about',
                     component: PageAbout
-                }, {
-                    path: '/edit',
-                    name: 'edit',
-                    component: PageEdit
                 }]
             })
             next && next();
@@ -58,23 +53,39 @@ var ImportFile = {
         var loadIndex = 0;
         var _this = this;
         if (imports && imports.length > 0) {
-            imports.map((item) => {
-                if (this.has.indexOf(item) == -1) {
-                    this.has.push(item);
-                    importFile(item, checkStatus);
+            // imports.map((item) => {
+            //     if (this.has.indexOf(item) == -1) {
+            //         this.has.push(item);
+            //         importFile(item, checkStatus);
+            //     } else {
+            //         checkStatus();
+            //     }
+            // });
+
+            waitLoad();
+
+            function waitLoad() {
+                var item = imports[loadIndex];
+                if (item && _this.has.indexOf(item) == -1) {
+                    importFile(item, () => {
+                        _this.has.push(item);
+                        checkStatus();
+                    });
                 } else {
                     checkStatus();
                 }
-            });
+
+                function checkStatus() {
+                    loadIndex++;
+                    if (loadIndex == imports.length) {
+                        callback && callback();
+                    } else {
+                        waitLoad();
+                    }
+                }
+            }
         } else {
             callback && callback();
-        }
-
-        function checkStatus() {
-            loadIndex++;
-            if (loadIndex == imports.length) {
-                callback && callback();
-            }
         }
 
         function importFile(url, callback) {
@@ -137,7 +148,7 @@ ImportFile.init(() => {
                 importObject: {
                     status: false,
                     data: [
-                        'script/tween.js',
+                        'script/refer/tween.js',
                         'script/common.js',
                         'script/data-access.js',
                         'script/config.js',

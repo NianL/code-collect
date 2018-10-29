@@ -17,7 +17,7 @@ Vue.component('l-tool-qrcode', {
             importObject: {
                 status: false,
                 data: [
-                    'script/qrcode.min.js',
+                    'script/refer/qrcode.min.js',
                 ]
             },
             qrcode: null,
