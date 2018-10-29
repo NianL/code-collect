@@ -1,14 +1,16 @@
 var PageArticle = {
     mixins: [MixinImport],
     template: `
-        <div class="article" v-if="importObject.status">
-            <div class="left">
-                <l-article-list :data="c_data" @click-handle="articleHandle" />
-                <l-paging :paging="paging" @paging-handle="pagingClick" />
-            </div>
-            <div class="right">
-                <div></div>
-            </div>
+        <div class="article" v-loading="!importObject.status">
+            <template v-if="importObject.status">
+                <div class="left">
+                    <l-article-list :data="c_data" @click-handle="articleHandle" />
+                    <l-paging :paging="paging" @paging-handle="pagingClick" />
+                </div>
+                <div class="right">
+                    <div></div>
+                </div>
+            </template>
         </div>
     `,
     data() {
