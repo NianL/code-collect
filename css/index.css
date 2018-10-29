@@ -12,7 +12,7 @@ a {
     cursor: pointer;
 }
 
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder {
     color: #ccc;
 }
 
@@ -57,11 +57,21 @@ button {
 }
 
 .main {
-    width: 1100px;
-    margin: 60px auto 60px auto;
+    position: fixed;
+    top: 42px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 42px);
+    overflow: auto;
 }
 
-.main::after {
+.main-layout {
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.main-layout::after {
     content: "";
     display: block;
     clear: both;
@@ -93,10 +103,6 @@ button {
 }
 
 /* ... */
-.main-tool {
-    padding: 10px;
-}
-
 .main-tool .item {
     background: #eee;
     color: #666;
@@ -183,7 +189,6 @@ button {
 .article .left {
     float: left;
     width: 780px;
-    padding: 0px 10px;
 }
 
 .article .right {

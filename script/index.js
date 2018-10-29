@@ -139,7 +139,7 @@ ImportFile.init(() => {
                         <l-header />
                     </div>
                     <div class="main">
-                        <router-view />
+                        <router-view class="main-layout" />
                     </div>
                 </div>
             `,
