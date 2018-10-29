@@ -1,7 +1,7 @@
 var PageHome = {
     mixins: [MixinImport],
     template: `
-        <div v-loading="importObject.status">
+        <div v-loading="!importObject.status">
             <template v-if="importObject.status">
                 <button @click="loadingStatus=true">show loading</button>
                 <button @click="loadingStatus=false">hide loading</button>
