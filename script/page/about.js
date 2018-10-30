@@ -1,7 +1,7 @@
 var PageAbout = {
     template: `
-        <div>
-            关于我们
+        <div class="main-about">
+            <div>作者：liun</div>
         </div>
     `,
     created() {

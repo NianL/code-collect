@@ -24,6 +24,7 @@ var PageArticle = {
                     'script/module/article-list.js'
                 ]
             },
+            searchContent: "",
             articleInfo: {},
             paging: {
                 index: 1,

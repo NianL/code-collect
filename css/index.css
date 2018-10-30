@@ -65,7 +65,7 @@ button {
     width: 1100px;
     margin: 0 auto;
     padding-top: 60px;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
 .main-layout::after {
@@ -76,11 +76,61 @@ button {
     overflow: hidden;
 }
 
-/* ... */
-.main-search {
-    margin-bottom: 15px;
+.main .input {
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
 }
 
+.main textarea,
+.main .textarea {
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    width: 770px;
+    height: 144px;
+    background: #fff;
+    border: 1px solid #ddd;
+    word-break: break-all;
+    overflow: auto;
+    margin: 2px 0px;
+    padding: 5px;
+}
+
+.main.input:focus,
+.main textarea:focus,
+.main .textarea:focus {
+    border: 1px solid #999;
+}
+
+.main button{
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0px 5px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.main button:hover{
+    background: #eee;
+}
+
+.main button.submit {
+    background: #888;
+    color: #fff;
+}
+
+.main button.submit:hover {
+    background: #666;
+}
+
+
+/* ... */
 .main-search input {
     background: #fff;
     border: 1px solid #ddd;
@@ -118,54 +168,12 @@ button {
     color: #eee;
 }
 
+.main-tool-list {
+    padding-top: 15px;
+}
+
 .main-tool-item h3 {
     margin-bottom: 15px;
-}
-
-.main-tool-item .input {
-    color: #333;
-    font-size: 14px;
-    line-height: 18px;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 5px;
-}
-
-.main-tool-item textarea,
-.main-tool-item .textarea {
-    color: #333;
-    font-size: 14px;
-    line-height: 18px;
-    width: 770px;
-    height: 144px;
-    background: #fff;
-    border: 1px solid #ddd;
-    word-break: break-all;
-    overflow: auto;
-    margin: 2px 0px;
-    padding: 5px;
-}
-
-.main-tool-item .input:focus,
-.main-tool-item textarea:focus,
-.main-tool-item .textarea:focus {
-    border: 1px solid #999;
-}
-
-.main-tool-item button,
-.main-tool-item .button {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 0px 5px;
-    display: inline-block;
-    height: 24px;
-    line-height: 24px;
-    cursor: pointer;
-}
-
-.main-tool-item button:hover,
-.main-tool-item .button:hover {
-    background: #eee;
 }
 
 /* ... */
@@ -209,6 +217,11 @@ button {
     border-bottom: 1px solid #eee;
     margin-bottom: 10px;
     text-align: center;
+}
+
+.article-detail .left .content {
+    line-height: 28px;
+    padding-top: 10px;
 }
 
 .article-list .list {

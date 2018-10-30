@@ -5,11 +5,13 @@ var PageTool = {
             <template v-if="importObject.status">
                 <template v-if="tabType==1">
                     <div class="main-search">
-                        <input v-model="searchContent" @focus="searchFocus" placeholder="输入关键词模糊查询" />
+                        <input v-model="searchContent" onfocus="this.select()" placeholder="输入关键词模糊查询" />
                     </div>
-                    <template v-for="item in c_itemList">
-                        <a class="item" @click="toolItemHandle(item)">{{item.title}}</a>
-                    </template>
+                    <div class="main-tool-list">
+                        <template v-for="item in c_itemList">
+                            <a class="item" @click="toolItemHandle(item)">{{item.title}}</a>
+                        </template>
+                    </div>
                 </template>
                 <template v-if="tabType==2">
                     <l-go-back :router-name="currentMenu" />
@@ -99,9 +101,6 @@ var PageTool = {
                 this.toolItem = null;
                 this.tabType = 1;
             }
-        },
-        searchFocus(e) {
-            e.target.select();
         },
         toolItemHandle(item) {
             this.$root.pageJump(this.toolInfo.routerName, {

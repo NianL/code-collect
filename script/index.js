@@ -119,10 +119,8 @@ var ImportFile = {
 var MixinImport = {
     created() {
         ImportFile.load(this.importObject.data, () => {
-            setTimeout(() => {
-                this.importObject.status = true;
-                this.init();
-            }, 500);
+            this.importObject.status = true;
+            this.init();
         });
     },
     methods: {

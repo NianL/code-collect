@@ -4,9 +4,9 @@ Vue.component('l-tool-base64-img', {
             <h3>图片转base64</h3>
             <input v-show="false" ref="upload_img" type="file" @change="fileHandle" accept="image/jpeg, image/png, image/bmp" />
             <div style="padding:5px 0px;">
-                <a class="button" @click="$refs.upload_img.click()">选择图片</a>
-                <a class="button" @click="clear">清空</a>
-                <a class="button" @click="output" v-show="fileInfo.name">导出txt</a>
+                <button @click="$refs.upload_img.click()">选择图片</button>
+                <button @click="clear">清空</button>
+                <button @click="output" v-show="fileInfo.name">导出txt</button>
                 <span v-if="fileInfo.name">{{ fileInfo.name }} {{ fileInfo.size | fileSizeFormat }}</span>
             </div>
             <div class="textarea">{{ conentBase64 }}</div>
@@ -71,17 +71,7 @@ Vue.component('l-tool-base64-img', {
         },
         output() {
             var fileName = this.fileInfo.name.substr(0, this.fileInfo.name.lastIndexOf('.')) + ".txt";
-            download(fileName, this.conentBase64);
-
-            function download(filename, text) {
-                var element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-                element.setAttribute('download', filename);
-                element.style.display = 'none';
-                document.body.appendChild(element);
-                element.click();
-                document.body.removeChild(element);
-            }
+            Common.downloadFile(fileName, this.conentBase64);
         }
     }
 });

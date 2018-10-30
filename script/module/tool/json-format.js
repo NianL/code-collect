@@ -7,7 +7,7 @@ Vue.component('l-tool-json-format', {
                 <div class="box">
                     <div class="operate">
                         <span>输入内容：</span>
-                        <a class="button" @click="content=''">清空</a>
+                        <button @click="content=''">清空</button>
                     </div>
                     <textarea v-model="content" />
                 </div>

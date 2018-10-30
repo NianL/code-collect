@@ -7,7 +7,7 @@ var PageArticleDetail = {
                     <l-go-back />
                     <div class="title"><h3 v-text="articleDetail.title" /></div>
                     <div class="time"><span v-text="articleDetail.createTime" /></div>
-                    <div class="content" v-html="articleDetail.content" />
+                    <div class="content w-e-text" style="overflow:auto;" v-html="articleDetail.content" />
                 </div>
                 <div class="right"></div>
             </template>
@@ -19,7 +19,8 @@ var PageArticleDetail = {
             importObject: {
                 status: false,
                 data: [
-                    'script/module/go-back.js'
+                    'script/module/go-back.js',
+                    'script/refer/wangEditor.min.js'
                 ]
             },
             articleDetail: {}

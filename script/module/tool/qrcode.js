@@ -6,8 +6,8 @@ Vue.component('l-tool-qrcode', {
             <div>输入内容：</div>
             <textarea v-model="content" />
             <div>
-                <a class="button" @click="create">生成二维码</a>
-                <a class="button" @click="clear">清空</a>
+                <button @click="create">生成二维码</button>
+                <button @click="clear">清空</button>
             </div>
             <div v-show="showPic" ref="ref_qrcode" style="padding:5px 0px;"></div>
         </div>

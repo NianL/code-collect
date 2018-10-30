@@ -11,11 +11,11 @@ Vue.component('l-tool-web-api', {
             </div>
             <div class="rows http">
                 <input class="input" placeholder="http://" />
-                <a class="button submit" @click="submitRequest">提交</a>
-                <a class="button" @click="saveRequest">保存</a>
+                <button class="submit" @click="submitRequest">提交</button>
+                <button @click="saveRequest">保存</button>
             </div>
             <div class="rows">
-                <a class="button" @click="addParams">添加参数</a>
+                <button @click="addParams">添加参数</button>
                 <template v-if="request.params.length>0">
                     <table class="params" cellpadding="0" cellspacing="0" border="0">
                         <tr>

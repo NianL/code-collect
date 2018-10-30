@@ -16,16 +16,16 @@
     font-size: 14px;
 }
 
-.main-tool .web-api .http .button {
+.main-tool .web-api .http button {
     padding: 2px 10px;
 }
 
-.main-tool .web-api .http .button.submit {
+.main-tool .web-api .http button.submit {
     background: #888;
     color: #fff;
 }
 
-.main-tool .web-api .http .button.submit:hover {
+.main-tool .web-api .http button.submit:hover {
     background: #666;
 }
 
