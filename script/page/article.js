@@ -74,10 +74,9 @@ var PageArticle = {
                 });
         },
         articleHandle(item) {
-            if (!this.isEdit)
-                this.$root.pageJump(this.articleInfo.routerName, {
-                    id: item.id
-                });
+            this.$root.pageJump(this.articleInfo.routerName, {
+                id: item.id
+            });
         },
         initPaging() {
             this.paging.index = this.$route.params.page || 1;
