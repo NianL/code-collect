@@ -87,10 +87,12 @@ var PageTool = {
                         break;
                     }
                 }
+                this.importObject.status = false;
                 ImportFile.load([item.path], () => {
                     document.title = item.title;
                     this.toolItem = itemName;
                     this.tabType = 2;
+                    this.importObject.status = true;
                 });
             } else {
                 document.title = '小玩意';
