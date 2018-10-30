@@ -15,6 +15,7 @@ var PageArticle = {
     `,
     data() {
         return {
+            type: 'view',
             currentMenu: 'article',
             importObject: {
                 status: false,
@@ -52,6 +53,10 @@ var PageArticle = {
         }
     },
     created() {
+        if (location.href.indexOf('?') > 0) {
+            this.type = location.href.split('?')[1];
+        }
+
         document.title = WebConfig.menu.t(this.currentMenu);
         this.$root.$emit('menu-current', this.currentMenu);
         this.getData();
@@ -69,9 +74,10 @@ var PageArticle = {
                 });
         },
         articleHandle(item) {
-            this.$root.pageJump(this.articleInfo.routerName, {
-                id: item.id
-            });
+            if (!this.isEdit)
+                this.$root.pageJump(this.articleInfo.routerName, {
+                    id: item.id
+                });
         },
         initPaging() {
             this.paging.index = this.$route.params.page || 1;
