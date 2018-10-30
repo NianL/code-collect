@@ -53,8 +53,8 @@ var PageArticle = {
         }
     },
     created() {
-        if (location.href.indexOf('?') > 0) {
-            this.type = location.href.split('?')[1];
+        if (location.search != "") {
+            this.type = location.search.split('?')[1];
         }
 
         document.title = WebConfig.menu.t(this.currentMenu);
