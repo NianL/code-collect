@@ -1,0 +1,123 @@
+.l-dialog {}
+
+
+.l-dialog .shadow {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: #000;
+}
+
+.l-dialog .message-box {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.l-dialog .message-box::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+
+.l-dialog .message-box .box {
+    padding: 5px 15px;
+    display: inline-block;
+    min-width: 300px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #e6ebf5;
+    -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    text-align: left;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-size: 16px;
+}
+
+.l-dialog .message-box .close::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+
+.l-dialog .message-box .close .title{
+    color: #999;
+    line-height: 30px;
+}
+
+.l-dialog .message-box .close a{
+    float: right;
+    color: #999;
+    font-size: 20px;
+}
+
+.l-dialog .message-box .content {
+    line-height: 24px;
+    padding: 10px 0px;
+}
+
+.l-dialog .message-box .button {
+    text-align: center;
+}
+
+.l-dialog .message-box .button a {
+    font-size: 14px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    display: inline-block;
+    line-height: 24px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.l-dialog .message-box .button a:hover {
+    background: #eee;
+}
+
+.l-dialog .message-box .button a.confirm {
+    background: #888;
+    color: #fff;
+}
+
+.l-dialog .message-box .button a.confirm:hover {
+    background: #666;
+}
+
+.l-dialog .fade-enter-active,
+.l-dialog .fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.l-dialog .fade-enter,
+.l-dialog .fade-leave-to {
+    opacity: 0;
+}
+
+.l-dialog .move-enter-active,
+.l-dialog .move-leave-active {
+    transition: all 0.3s;
+}
+
+.l-dialog .move-enter,
+.l-dialog .move-leave-to {
+    opacity: 0;
+    transform: translate3d(0, -5%, 0);
+}

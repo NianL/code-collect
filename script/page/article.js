@@ -3,6 +3,9 @@ var PageArticle = {
     template: `
         <div class="article" v-loading="!importObject.status">
             <template v-if="importObject.status">
+                <div v-if="isManage">
+                    <button @click="$article_edit">添加内容</button>
+                </div>
                 <div class="left">
                     <l-article-list :data="c_data" @click-handle="articleHandle" />
                     <l-paging :paging="paging" @paging-handle="pagingClick" />
@@ -15,7 +18,7 @@ var PageArticle = {
     `,
     data() {
         return {
-            type: 'view',
+            isManage: false,
             currentMenu: 'article',
             importObject: {
                 status: false,
@@ -54,7 +57,11 @@ var PageArticle = {
     },
     created() {
         if (location.search != "") {
-            this.type = location.search.split('?')[1];
+            ImportFile.load([
+                '/script/plugin/article-edit.js'
+            ], () => {
+                this.isManage = true;
+            });
         }
 
         document.title = WebConfig.menu.t(this.currentMenu);
@@ -74,9 +81,15 @@ var PageArticle = {
                 });
         },
         articleHandle(item) {
-            this.$root.pageJump(this.articleInfo.routerName, {
-                id: item.id
-            });
+            if (this.isManage) {
+                this.$article_edit({
+                    id: item.id
+                });
+            } else {
+                this.$root.pageJump(this.articleInfo.routerName, {
+                    id: item.id
+                });
+            }
         },
         initPaging() {
             this.paging.index = this.$route.params.page || 1;
@@ -86,6 +99,9 @@ var PageArticle = {
             this.$root.pageJump('article-list', {
                 page: index
             });
+        },
+        dialogHandle(res) {
+            this.dialogShow = false;
         }
     }
 };

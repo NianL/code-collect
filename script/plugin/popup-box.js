@@ -97,8 +97,9 @@ PluginPopupBox.install = function (Vue, options) {
                 } else {
                     this.msg = obj;
                 }
-                setTimeout(() => {
-                    this.isShow = true;
+                var _this = this;
+                setTimeout(function () {
+                    _this.isShow = true;
                 });
             },
             methods: {
@@ -112,7 +113,7 @@ PluginPopupBox.install = function (Vue, options) {
                 },
                 remove: function () {
                     this.isShow = false;
-                    setTimeout(() => {
+                    setTimeout(function () {
                         document.body.removeChild(coms);
                     }, 500);
                 }
