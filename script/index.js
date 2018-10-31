@@ -155,6 +155,8 @@ ImportFile.init(() => {
                         'script/module/header.js',
                         'script/component/loading.js',
                         'css/component/loading.css',
+                        'script/plugin/popup-box.js',
+                        'css/plugin/popup-box.css',
                         'script/component/menu-nav.js',
                         'css/component/menu-nav.css'
                     ]

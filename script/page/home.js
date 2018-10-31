@@ -5,6 +5,8 @@ var PageHome = {
             <template v-if="importObject.status">
                 <button @click="loadingStatus=true">show loading</button>
                 <button @click="loadingStatus=false">hide loading</button>
+                <button @click="$message('弹出消息测试')">message</button>
+                <button @click="testConfirm">confirm</button>
                 <div v-loading="loadingStatus" style="position:relative ;min-height:400px; background:#eee; margin-top:10px;">
                     <l-menu-nav 
                         default-value="这个" 
@@ -24,7 +26,7 @@ var PageHome = {
             importObject: {
                 status: false,
                 data: [
-                    
+
                 ]
             },
             loadingStatus: false,
@@ -61,6 +63,17 @@ var PageHome = {
         init() {},
         articleHandle(item) {
             console.log(item);
+        },
+        testConfirm() {
+            this.$confirm({
+                msg: "确定是否删除？",
+                confirm() {
+                    console.log("确定");
+                },
+                cancel() {
+                    console.log("取消");
+                }
+            });
         }
     }
 };

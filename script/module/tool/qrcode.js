@@ -31,6 +31,7 @@ Vue.component('l-tool-qrcode', {
                 this.qrcode = new QRCode(this.$refs.ref_qrcode);
 
             if (this.content == '') {
+                this.$message('输入不能为空');
                 this.clear();
             } else {
                 this.qrcode.makeCode(this.content);

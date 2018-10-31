@@ -38,7 +38,7 @@ Vue.component('l-tool-base64-img', {
             var file = this.$refs.upload_img.files[0];
             if (file) {
                 if (file.size > (maxSize * 1024 * 1024)) {
-                    alert("图片大小不超过" + maxSize + "M");
+                    this.$message("图片大小不超过" + maxSize + "M");
                     this.clear();
                     return;
                 }
