@@ -14,3 +14,5 @@ var PageAbout = {
         this.$root.$emit('menu-current', this.currentMenu);
     }
 };
+
+//export default PageAbout;
