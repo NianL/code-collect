@@ -56,7 +56,7 @@ var PageHome = {
         };
     },
     created() {
-        document.title = '首页';
+        document.title = WebConfig.menu.t(this.currentMenu);;
         this.$root.$emit('menu-current', this.currentMenu);
     },
     methods: {

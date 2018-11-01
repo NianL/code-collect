@@ -31,7 +31,7 @@ PluginArticleEdit.install = function (Vue, options) {
                         data: [
                             'css/component/dialog.css',
                             'script/component/dialog.js',
-                            'script/refer/wangEditor.min.js',
+                            'script/refer/wangEditor.min.js'
                         ]
                     },
                     title: '',

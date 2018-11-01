@@ -97,7 +97,7 @@ var PageTool = {
                     this.importObject.status = true;
                 });
             } else {
-                document.title = '小玩意';
+                document.title = WebConfig.menu.t(this.currentMenu);;
                 this.toolItem = null;
                 this.tabType = 1;
             }

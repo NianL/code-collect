@@ -4,8 +4,13 @@ var PageAbout = {
             <div>作者：liun</div>
         </div>
     `,
+    data() {
+        return {
+            currentMenu: 'about'
+        };
+    },
     created() {
-        document.title = '关于我们';
-        this.$root.$emit('menu-current', 'about');
+        document.title = WebConfig.menu.t(this.currentMenu);;
+        this.$root.$emit('menu-current', this.currentMenu);
     }
 };

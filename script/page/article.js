@@ -58,7 +58,7 @@ var PageArticle = {
     created() {
         if (location.search != "") {
             ImportFile.load([
-                '/script/plugin/article-edit.js'
+                'script/plugin/article-edit.js'
             ], () => {
                 this.isManage = true;
             });
