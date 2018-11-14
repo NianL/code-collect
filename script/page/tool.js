@@ -15,19 +15,11 @@ var PageTool = {
                 </template>
                 <template v-if="tabType==2">
                     <l-go-back :router-name="currentMenu" />
-                    <page-view class="main-tool-item" :path="'l-tool-'+toolItem" />
+                    <component class="main-tool-item" :is="'l-tool-'+toolItem" />
                 </template>
             </template>
         </div>
     `,
-    components: {
-        'page-view': {
-            props: ['path'],
-            render: function (h) {
-                return h(this.path);
-            }
-        }
-    },
     data() {
         return {
             currentMenu: 'tool',

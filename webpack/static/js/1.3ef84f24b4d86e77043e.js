@@ -1,0 +1,2 @@
+webpackJsonp([1],{gUeM:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var s={props:["name"],methods:{goBack:function(){this.name?this.$router.push({name:this.name}):history.go(-1)}}},o={render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"go-back"},[e("a",{domProps:{textContent:this._s("<返回")},on:{click:this.goBack}})])},staticRenderFns:[]};var a=n("C7Lr")(s,o,!1,function(t){n("lAcm")},"data-v-5d615b90",null);e.default=a.exports},lAcm:function(t,e){}});
+//# sourceMappingURL=1.3ef84f24b4d86e77043e.js.map
