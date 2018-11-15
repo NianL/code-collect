@@ -65,7 +65,7 @@ var PageArticle = {
         }
 
         document.title = WebConfig.menu.t(this.currentMenu);
-        this.$root.$emit('menu-current', this.currentMenu);
+        this.$emit('now-menu', this.currentMenu);
         this.getData();
 
         this.initPaging();
@@ -86,8 +86,11 @@ var PageArticle = {
                     id: item.id
                 });
             } else {
-                this.$root.pageJump(this.articleInfo.routerName, {
-                    id: item.id
+                this.$router.push({
+                    name: this.articleInfo.routerName,
+                    params: {
+                        id: item.id
+                    }
                 });
             }
         },
@@ -96,8 +99,11 @@ var PageArticle = {
         },
         pagingClick(index) {
             this.paging.index = index;
-            this.$root.pageJump('article-list', {
-                page: index
+            this.$router.push({
+                name: 'article-list',
+                params: {
+                    page: index
+                }
             });
         },
         dialogHandle(res) {

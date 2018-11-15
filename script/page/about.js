@@ -10,8 +10,8 @@ var PageAbout = {
         };
     },
     created() {
-        document.title = WebConfig.menu.t(this.currentMenu);;
-        this.$root.$emit('menu-current', this.currentMenu);
+        document.title = WebConfig.menu.t(this.currentMenu);
+        this.$emit('now-menu', this.currentMenu);
     }
 };
 

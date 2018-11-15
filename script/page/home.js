@@ -57,7 +57,7 @@ var PageHome = {
     },
     created() {
         document.title = WebConfig.menu.t(this.currentMenu);;
-        this.$root.$emit('menu-current', this.currentMenu);
+        this.$emit('now-menu', this.currentMenu);
     },
     methods: {
         init() {},

@@ -9,7 +9,7 @@ Vue.component('l-tool-base64-img', {
                 <button @click="output" v-show="fileInfo.name">导出txt</button>
                 <span v-if="fileInfo.name">{{ fileInfo.name }} {{ fileInfo.size | fileSizeFormat }}</span>
             </div>
-            <div class="textarea">{{ conentBase64 }}</div>
+            <div class="textarea" v-if="fileInfo.size<2097152">{{ conentBase64 }}</div>
             <div v-if="conentBase64!=''" style="margin-top:10px;">
                 <img :src="conentBase64" style="max-width:780px; max-height:400px;" />
             </div>
@@ -17,8 +17,10 @@ Vue.component('l-tool-base64-img', {
     `,
     data() {
         return {
-            fileInfo: {},
-            conentBase64: "",
+            fileInfo: {
+                size: 0
+            },
+            conentBase64: ""
         };
     },
     filters: {
@@ -38,9 +40,7 @@ Vue.component('l-tool-base64-img', {
             var file = this.$refs.upload_img.files[0];
             if (file) {
                 if (file.size > (maxSize * 1024 * 1024)) {
-                    this.$message("图片大小不超过" + maxSize + "M");
-                    this.clear();
-                    return;
+                    this.$message("图片过大，请直接导出txt查看");
                 }
 
                 this.fileInfo = {
@@ -56,7 +56,9 @@ Vue.component('l-tool-base64-img', {
             }
         },
         clear() {
-            this.fileInfo = {};
+            this.fileInfo = {
+                size: 0
+            };
             this.conentBase64 = "";
             this.$refs.upload_img.value = "";
         },

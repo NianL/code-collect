@@ -15,8 +15,7 @@ Vue.component('l-article-list', {
     props: ['data'],
     data() {
         return {
-            currentMenu: null,
-            menuData: WebConfig.menu.data
+            currentMenu: null
         };
     },
     methods: {

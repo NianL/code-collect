@@ -8,7 +8,7 @@ WebConfig.menu = {
         text: '随便写写',
         value: 'article'
     }, {
-        text: '小玩意',
+        text: '小工具',
         value: 'tool'
     }, {
         text: '关于',

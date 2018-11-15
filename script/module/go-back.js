@@ -8,7 +8,9 @@ Vue.component('l-go-back', {
     methods: {
         goBack() {
             if (this.routerName) {
-                this.$root.pageJump(this.routerName);
+                this.$router.push({
+                    name: this.routerName
+                });
             } else {
                 history.go(-1);
             }

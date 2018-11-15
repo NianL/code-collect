@@ -27,7 +27,7 @@ var PageArticleDetail = {
         }
     },
     created() {
-        this.$root.$emit('menu-current', this.currentMenu);
+        this.$emit('now-menu', this.currentMenu);
         this.getArticleDetail();
     },
     methods: {

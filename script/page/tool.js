@@ -54,7 +54,7 @@ var PageTool = {
         }
     },
     created() {
-        this.$root.$emit('menu-current', this.currentMenu);
+        this.$emit('now-menu', this.currentMenu);
         this.getData();
     },
     methods: {
@@ -95,8 +95,11 @@ var PageTool = {
             }
         },
         toolItemHandle(item) {
-            this.$root.pageJump(this.toolInfo.routerName, {
-                name: item.name
+            this.$router.push({
+                name: this.toolInfo.routerName,
+                params: {
+                    name: item.name
+                }
             });
         }
     }

@@ -6,6 +6,7 @@ var ImportFile = {
             'script/page/article.js',
             'script/page/article-detail.js',
             'script/page/tool.js',
+            'script/page/code.js',
             'script/page/about.js'
         ];
 
@@ -39,6 +40,10 @@ var ImportFile = {
                     path: '/tool/i/:name',
                     name: 'tool-item',
                     component: PageTool
+                }, {
+                    path: '/code',
+                    name: 'code',
+                    component: PageCode
                 }, {
                     path: '/about',
                     name: 'about',
@@ -136,15 +141,16 @@ ImportFile.init(() => {
         template: `
                 <div v-if="importObject.status">
                     <div class="header">
-                        <l-header />
+                        <l-header :current-menu="currentMenu" />
                     </div>
                     <div class="main">
-                        <router-view class="main-layout" />
+                        <router-view class="main-layout" @now-menu="nowMenu" />
                     </div>
                 </div>
             `,
         data() {
             return {
+                currentMenu: null,
                 importObject: {
                     status: false,
                     data: [
@@ -164,11 +170,8 @@ ImportFile.init(() => {
             }
         },
         methods: {
-            pageJump(name, params) {
-                this.$router.push({
-                    name: name,
-                    params: params
-                });
+            nowMenu(n) {
+                this.currentMenu = n;
             }
         }
     });
