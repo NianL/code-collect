@@ -469,6 +469,23 @@ Common.inherit = function (p) {
     return new f();
 };
 
+//克隆对象
+Common.clone = function (obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+//深拷贝对象
+Common.deepCopy = function (obj) {
+    if (typeof obj != 'object') {
+        return obj;
+    }
+    var newobj = {};
+    for (var attr in obj) {
+        newobj[attr] = deepCopy(obj[attr]);
+    }
+    return newobj;
+}
+
 //目录树根据根据一个节点获取所有父节点的信息
 Common.getNodesByItem = function (menuDate, item) {
     var data = menuDate;
@@ -529,3 +546,22 @@ Common.downloadFile = function (filename, text) {
     element.click();
     document.body.removeChild(element);
 };
+
+//设置cookie
+Common.setCookie = function (cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + ((exdays || 1) * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+//获取cookie
+Common.getCookie = function (cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return "";
+}
